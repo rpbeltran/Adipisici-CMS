@@ -1,0 +1,30 @@
+git add .{
+  "name": "adipisici",
+  "version": "0.0.0",
+  "description": "A Decoupled Content Management System with integrated version control",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rpbeltran/Adipisici-CMS.git"
+  },
+  "keywords": [
+    "CMS",
+    "npm",
+    "mongodb",
+    "version",
+    "control"
+  ],
+  "author": "Ryan Beltran <rp.beltran@tamu.edu>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rpbeltran/Adipisici-CMS/issues"
+  },
+  "homepage": "https://github.com/rpbeltran/Adipisici-CMS#readme"
+}
