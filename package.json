@@ -2,7 +2,7 @@
   "name": "adipisici",
   "version": "0.0.0",
   "description": "A Decoupled Content Management System with integrated version control",
-  "main": "index.js",
+  "main": "lib/index.js",
   "directories": {
     "example": "examples",
     "test": "test"
@@ -17,14 +17,18 @@
   "keywords": [
     "CMS",
     "npm",
-    "mongodb",
-    "version",
-    "control"
+    "mongodb"
   ],
   "author": "Ryan Beltran <rp.beltran@tamu.edu>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/rpbeltran/Adipisici-CMS/issues"
   },
-  "homepage": "https://github.com/rpbeltran/Adipisici-CMS#readme"
+  "homepage": "https://github.com/rpbeltran/Adipisici-CMS#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bson-ext": "^1.0.1",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.16"
+  }
 }
