@@ -2,16 +2,13 @@
 Adipisici CMS
 ===
 
-An API-First Content Management System.
-
-Current Version: 0.1.0
-
+A RESTful, decoupled, and API-First Content Management System designed to provide an impartial and developer friendly backend environment that allows developers to easily build web applications, mobile apps, and more around your content. 
+Adipisici was built on the premise that the content layer should be decoupled from the rendering layer.
 
 Why this?
 ===
 
-Content Management Systems are all that stand between developers and static files.
-Great, but sometimes a CMS takes it too far.
+Content Management Systems are all that stand between developers and static files, but often a CMS takes it too far.
 
 Some problems with a traditional CMS:
  * They force you to use their front end tools. A WYSIWYG can only take you so far, and even designing custom templates you are still limited in what technologies you can use.
@@ -20,16 +17,7 @@ Some problems with a traditional CMS:
 
 These are not problems for everybody. For people without a background in web design, a WYSIWYG is empowering, not limiting. But some people want or need to be in greater control.
 
-Adipisici CMS is a project to make a CMS that does what a Content Management System should do.. manage content, while remaining completely impartial to the rest of your stack.
-
-Adipisici CMS uses:
- * Node.js - for server side scripting
- * MongoDB - for storing content
- * Git - for creating integrated version control ( future )
- * NPM - for package management and installation
-
-The goal of Adipisici is to provide a developer friendly, REST API Content Management System that allows you to build websites, mobile apps, and more around your content.
-
+Adipisici CMS is designed to manage content, while remaining completely impartial to the rest of your stack.
 
 **Development**
 
