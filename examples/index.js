@@ -1,25 +1,18 @@
 
-
-Adipisici = require( '../lib/adipisici' );
+// Require Adipisici
+Adipisici = require( './lib/adipisici' );
 
 // Create and initialize Adipisici server
+website = new Adipisici( "My Website", "mongodb://localhost:27017/mywebsite", 8080 );
 
-computationist = new Adipisici( "Computationist", "mongodb://localhost:27017/computationist", 3000 );
+// Data Modeling
+website.database.initiate_connection().then( function( ) {
 
-computationist.database.initiate_connection().then( function( ) {
-
-    computationist.createDataForm( 'algorithms',
-
+    website.createDataForm( 'blog_post',
         {
-            name : {
-                required: true,
-                unique: true,
-                indexed: true
-            },
 
-            popularity : {
-                default: 0,
-                indexed: true
+            name : {
+                required: true
             },
 
             url : {
@@ -27,52 +20,47 @@ computationist.database.initiate_connection().then( function( ) {
                 unique: true
             },
 
-            'short description' : {
-                default: ""
+            cover : {
+            	required: false
             },
 
-            'long description' : {
-                default: ""
-            },
+            summary : { 
+            	required: false
+            }
 
-            'visualization url' : { },
-
-            'visualization dependencies' : { },
-
-            psuedocode : { }
         }
-
     );
 
 }).catch( function( error ) {
-
     console.log( error );
-
 });
 
 
+// Blog Post Endpoints
 
-
-
-// Retrieve algorithms
-computationist.server.createEndpoint( 'get', '/algorithms/:algorithmName', function( request ) {
-    return computationist.database.find( 'algorithms', { name : request.params.algorithmName } );
+// Retrieve all blog posts
+website.server.createEndpoint( 'get', '/blog', function(request ) {
+    return website.database.allDocuments( 'blog_post' );
 } );
 
-// Upsert algorithms
-computationist.server.createEndpoint( 'put', '/algorithms/:algorithmName', function( request ) {
-    return computationist.format( 'algorithms', request.body ).then( function( entry ) {
-        computationist.database.upsert( 'algorithms', { url : request.params.algorithmName }, entry );
+// Retrieve a specific blog post
+website.server.createEndpoint( 'get', '/blog/:blog_url', function(request ) {
+    return website.database.find( 'blog_post', { url : request.params.blog_url } );
+} );
+
+// Upsert blog post
+website.server.createEndpoint( 'put', '/blog/:blog_url', function(request ) {
+    return website.format( 'blog_post', request.body ).then( function( entry ) {
+        website.database.upsert( 'blog_post', { url : request.params.blog_url }, entry );
     } ) ;
-} ) ;
-
-// Edit algorithms
-computationist.server.createEndpoint( 'patch', '/algorithms/:algorithmName', function( request ) {
-    return computationist.database.updateOne( 'algorithms', { url : request.params.algorithmName }, request.body );
 } );
 
-// Delete algorithms
-computationist.server.createEndpoint( 'delete', '/algorithms/:algorithmName', function( request ) {
-    return computationist.database.deleteOne( 'algorithms', { url : request.params.algorithmName } );
+// Edit blog post
+website.server.createEndpoint( 'patch', '/blog/:blog_url', function(request ) {
+    return website.database.update( 'blog_post', { url : request.params.blog_url }, request.body );
 } );
 
+// Delete blog post
+website.server.createEndpoint( 'delete', '/blog/:blog_url', function(request ) {
+    return website.database.delete( 'blog_post', { url : request.params.blog_url } );
+} );
