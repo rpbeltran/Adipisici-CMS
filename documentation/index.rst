@@ -14,7 +14,7 @@ Welcome to Adipisici's documentation!
 
 Indices and tables
 ==================
-
+make
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
