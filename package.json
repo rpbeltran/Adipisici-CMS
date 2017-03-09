@@ -1,6 +1,6 @@
 {
   "name": "adipisici",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A Decoupled Content Management System with integrated version control",
   "main": "lib/index.js",
   "directories": {

@@ -4,7 +4,7 @@ Adipisici CMS
 
 An API-First Content Management System.
 
-Current Version: 0.0.1
+Current Version: 0.1.1
 
 
 Why this?
@@ -31,35 +31,35 @@ Adipisici CMS uses:
 The goal of Adipisici is to provide a developer friendly, REST API Content Management System that allows you to build websites, mobile apps, and more around your content.
 
 
-Planned Timeline ( free to change )
+Planned Timeline
 ===
 
-Planned Features for 0.1 (Due on Saturday 12/31/16):
+Planned Features for 0.1:
  * RESTfull Content API
  * Content creation and editing endpoints
  * Efficient data storage in mongoDB
 
-Planned Features for 0.2 (Due on Monday 1/2/17):
+Planned Features for 0.2:
  * Secure admin endpoints through OAuth 2.0 Authentication
 
-Planned Features for 0.3 (Due on Wednesday 1/4/17):
+Planned Features for 0.3:
  * Integrate Hammer for security
  * Rate limit authentication
 
-Planned Features for 0.4 (Due on Friday 1/6/17):
+Planned Features for 0.4:
  * Client-side resource caching for get requests
 
-Planned Features for 0.5 (Due on Monday 1/9/17):
+Planned Features for 0.5:
  * Secure cookies and sessions implementation
 
-Planned Features for 0.6 (Due on Wednesday 1/11/17):
+Planned Features for 0.6:
  * Integrated Analytics
  * Scheduled Tasks
 
-Planned Features for 0.7 (Due on Friday 1/13/17):
+Planned Features for 0.7:
  * Integrated Version Control through GIT
 
-Planned Features for 1.0 (Due on Friday 1/20/17):
+Planned Features for 1.0:
  * Admin control panel
 
 Planned Features for 1.1:
