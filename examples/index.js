@@ -20,12 +20,13 @@ website.database.initiate_connection().then( function( ) {
                 unique: true
             },
 
+
             cover : {
                 required: false
             },
 
             summary : {
-                required: false
+            	required: false
             }
 
         }
