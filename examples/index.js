@@ -15,15 +15,10 @@ website.connect_database().then( function( ) {
             required: true
         },
 
-        url : {git
+        url : {
             type: String,
             required: true,
             unique: true
-        },
-
-        cover : {
-            type: String,
-            required: false
         },
 
         summary : {
@@ -62,7 +57,7 @@ website.server.createEndpoint( 'get', '/blog/:blog_url', function(request ) {
 
 // Upsert blog post
 website.server.createEndpoint( 'put', '/blog/:blog_url', function(request ) {
-    return website.data_layer.upsert( 'blog_post', { url : request.params.blog_url }, request.params );
+    return website.data_layer.upsert( 'blog_post', { url : request.params.blog_url }, request.body );
 } );
 
 // Edit blog post
