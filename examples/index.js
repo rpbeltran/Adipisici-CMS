@@ -46,7 +46,7 @@ website.connect_database().then( function( ) {
 // Blog Post Endpoints
 
 // Retrieve all blog posts
-website.server.createEndpoint( 'get', '/blog', function(request ) {
+website.server.createEndpoint( 'get', '/blog', function( request ) {
     return website.data_layer.all( 'blog_post' );
 } );
 
