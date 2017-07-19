@@ -48,4 +48,4 @@ jspm_packages
 
 /database/
 /.idea/
-test/
+/test/
