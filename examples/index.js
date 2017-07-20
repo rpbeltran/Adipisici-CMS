@@ -79,6 +79,10 @@ website.connect_database().then( ( ) => {
 
         data_form : 'blog_post',
 
+        display_by : 'name',
+
+        index_by : 'url',
+
         endpoints : {
             list   : post_list,
             get    : post_get,
