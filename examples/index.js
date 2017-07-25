@@ -3,18 +3,20 @@
 // Require Adipisici
 Adipisici = require( '../lib/adipisici.js' );
 
-// Create and initialize Adipisici server
+// Create an Adipisici Instance Server
 website = new Adipisici( "My Website" );
 
+// Begin Listening on Endpoints
 website.startListening().then( () => {
     console.log( 'My Website is listening on port ' + website.server.settings.port );
 });
 
-// Data Modeling
+// Connect to the Database and Start Data Modeling
 website.connect_database().then( ( ) => {
 
     console.log( 'My website is connected to a mongo database at ' + website.mongo_url );
 
+    // Blog Post Data Model
     website.createDataForm( 'blog_post', {
 
         name : {
@@ -33,17 +35,19 @@ website.connect_database().then( ( ) => {
             required: false
         },
 
+
         reads : {
             type : Number,
             default: 0
         },
 
         content : {
-            type: String,
+            type: "Markdown",
             default: "Lorem ipsum dolor sit amet."
         }
 
     } );
+
 
     // Blog Post Endpoints
 
@@ -76,13 +80,9 @@ website.connect_database().then( ( ) => {
     // Admin Panel
 
     website.admin_panel.connect_object( 'Post', {
-
         data_form : 'blog_post',
-
         display_by : 'name',
-
         index_by : 'url',
-
         endpoints : {
             list   : post_list,
             get    : post_get,
@@ -90,9 +90,7 @@ website.connect_database().then( ( ) => {
             edit   : post_edit,
             delete : post_delete
         }
-
     } );
-
 
 }).catch( ( error ) => {
     console.log( error );
